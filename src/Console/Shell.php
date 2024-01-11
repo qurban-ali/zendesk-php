@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\Console;
+namespace Zendesk\API\Console;
 
-use Zendesk\Console\Matchers\SubResourceMatcher;
 use Psy\TabCompletion\Matcher\ObjectAttributesMatcher;
 use Psy\TabCompletion\Matcher\ObjectMethodsMatcher;
+use Zendesk\API\Console\Matchers\SubResourceMatcher;
 
 class Shell extends \Psy\Shell
 {

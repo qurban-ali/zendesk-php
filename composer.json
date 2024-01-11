@@ -11,8 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Zendesk\\API\\": "src/",
-            "Zendesk\\Console\\": "src/"
+            "Zendesk\\": "src/"
         }
     },
     "minimum-stability": "stable"

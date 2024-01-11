@@ -1,10 +1,11 @@
 <?php
 
-namespace Zendesk\Console\Matchers;
+namespace Zendesk\API\Console\Matchers;
 
 use InvalidArgumentException;
 use Psy\TabCompletion\Matcher\AbstractContextAwareMatcher;
 use Psy\TabCompletion\Matcher\AbstractMatcher;
+use Zendesk\Console\Matchers\to;
 
 class SubResourceMatcher extends AbstractContextAwareMatcher
 {

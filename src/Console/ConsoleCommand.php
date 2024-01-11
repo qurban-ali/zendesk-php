@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\Console;
+namespace Zendesk\API\Console;
 
 use Psy\Configuration;
 use RuntimeException;
