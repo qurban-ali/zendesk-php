@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
 /**
  * Trait ResourceName

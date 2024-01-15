@@ -1,12 +1,12 @@
 <?php
 
-namespace Zendesk\API\Resources;
+namespace Qurban\ZendeskAPI\Resources;
 
-use Zendesk\API\HttpClient;
-use Zendesk\API\Resources\Chat\Apps;
-use Zendesk\API\Resources\Chat\Integrations;
-use Zendesk\API\Traits\Utility\ChainedParametersTrait;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\HttpClient;
+use Qurban\ZendeskAPI\Resources\Chat\Apps;
+use Qurban\ZendeskAPI\Resources\Chat\Integrations;
+use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * This class serves as a container to allow calls to $this->client->chat

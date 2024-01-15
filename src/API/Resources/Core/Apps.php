@@ -1,13 +1,13 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Delete;
-use Zendesk\API\Traits\Resource\Find;
-use Zendesk\API\Traits\Resource\MultipartUpload;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Delete;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Traits\Resource\MultipartUpload;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * The Apps class exposes app management methods
@@ -91,7 +91,7 @@ class Apps extends ResourceAbstract
      *
      * @return \stdClass | null
      * @throws MissingParametersException
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function jobStatus(array $params)
     {
@@ -116,7 +116,7 @@ class Apps extends ResourceAbstract
      *
      * @return \stdClass | null
      * @throws MissingParametersException
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function update($id = null, array $params = [])
     {

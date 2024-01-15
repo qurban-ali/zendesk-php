@@ -1,14 +1,14 @@
 <?php
 
-namespace Zendesk\API\Resources;
+namespace Qurban\ZendeskAPI\Resources;
 
-use App\Packages\Zendesk\API\Resources\CustomData\CustomObjects;
-use Zendesk\API\HttpClient;
-use Zendesk\API\Resources\HelpCenter\Categories;
-use Zendesk\API\Resources\HelpCenter\Sections;
-use Zendesk\API\Resources\HelpCenter\Articles;
-use Zendesk\API\Traits\Utility\ChainedParametersTrait;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use App\Packages\Qurban\ZendeskAPI\Resources\CustomData\CustomObjects;
+use Qurban\ZendeskAPI\HttpClient;
+use Qurban\ZendeskAPI\Resources\HelpCenter\Categories;
+use Qurban\ZendeskAPI\Resources\HelpCenter\Sections;
+use Qurban\ZendeskAPI\Resources\HelpCenter\Articles;
+use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * This class serves as a container to allow $this->client->helpCenter

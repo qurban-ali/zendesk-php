@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Create;
-use Zendesk\API\Traits\Resource\CreateMany;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Create;
+use Qurban\ZendeskAPI\Traits\Resource\CreateMany;
 
 /**
  * The TicketImport class exposes import methods for tickets

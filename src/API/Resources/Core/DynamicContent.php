@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * Class DynamicContent

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API\Middleware;
+namespace Qurban\ZendeskAPI\Middleware;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;

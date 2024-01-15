@@ -1,15 +1,15 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Create;
-use Zendesk\API\Traits\Resource\CreateMany;
-use Zendesk\API\Traits\Resource\Delete;
-use Zendesk\API\Traits\Resource\Find;
-use Zendesk\API\Traits\Resource\FindAll;
-use Zendesk\API\Traits\Resource\Update;
-use Zendesk\API\Traits\Resource\UpdateMany;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Create;
+use Qurban\ZendeskAPI\Traits\Resource\CreateMany;
+use Qurban\ZendeskAPI\Traits\Resource\Delete;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Traits\Resource\FindAll;
+use Qurban\ZendeskAPI\Traits\Resource\Update;
+use Qurban\ZendeskAPI\Traits\Resource\UpdateMany;
 
 /**
  * Class DynamicContentItemVariants

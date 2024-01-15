@@ -1,13 +1,13 @@
 <?php
 
-namespace Zendesk\API\Resources\Voice;
+namespace Qurban\ZendeskAPI\Resources\Voice;
 
-use Zendesk\API\Traits\Resource\ResourceName;
+use Qurban\ZendeskAPI\Traits\Resource\ResourceName;
 
 /**
  * Abstract class for Voice resources
  */
-abstract class ResourceAbstract extends \Zendesk\API\Resources\ResourceAbstract
+abstract class ResourceAbstract extends \Qurban\ZendeskAPI\Resources\ResourceAbstract
 {
     use ResourceName;
 

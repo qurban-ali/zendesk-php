@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Resources;
+namespace Qurban\ZendeskAPI\Resources;
 
-use Zendesk\API\HttpClient;
-use Zendesk\API\Resources\Embeddable\ConfigSets;
-use Zendesk\API\Traits\Utility\ChainedParametersTrait;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\HttpClient;
+use Qurban\ZendeskAPI\Resources\Embeddable\ConfigSets;
+use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * This class serves as a container to allow $this->client->embeddable

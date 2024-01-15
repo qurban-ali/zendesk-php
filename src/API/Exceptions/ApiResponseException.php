@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API\Exceptions;
+namespace Qurban\ZendeskAPI\Exceptions;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
@@ -9,7 +9,7 @@ use GuzzleHttp\Exception\ServerException;
 /**
  * Class ApiResponseException
  *
- * @package Zendesk\API\Exceptions
+ * @package Qurban\ZendeskAPI\Exceptions
  */
 class ApiResponseException extends \Exception
 {

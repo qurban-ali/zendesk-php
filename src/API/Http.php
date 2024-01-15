@@ -1,18 +1,18 @@
 <?php
 
-namespace Zendesk\API;
+namespace Qurban\ZendeskAPI;
 
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\LazyOpenStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\StreamInterface;
-use Zendesk\API\Exceptions\ApiResponseException;
-use Zendesk\API\Exceptions\AuthException;
+use Qurban\ZendeskAPI\Exceptions\ApiResponseException;
+use Qurban\ZendeskAPI\Exceptions\AuthException;
 
 /**
  * HTTP functions via curl
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class Http
 {
@@ -91,7 +91,7 @@ class Http
                 list ($request, $requestOptions) = $client->getAuth()->prepareRequest($request, $requestOptions);
             }
             if ($client->log_api_calls) {
-                echo "\nZendesk\API\Http: " . $request->getMethod() . " " . $request->getUri() . "\n";
+                echo "\nQurban\ZendeskAPI\Http: " . $request->getMethod() . " " . $request->getUri() . "\n";
             }
             $response = $client->guzzle->send($request, $requestOptions);
         } catch (RequestException $e) {

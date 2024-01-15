@@ -1,15 +1,15 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\CustomException;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Exceptions\CustomException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * The Tags class exposes methods as detailed on http://developer.zendesk.com/documentation/rest_api/tags.html
  *
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class Tags extends ResourceAbstract
 {

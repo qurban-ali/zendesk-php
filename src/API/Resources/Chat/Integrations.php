@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Resources\Chat;
+namespace Qurban\ZendeskAPI\Resources\Chat;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
 
 /**
  * @method Integrations find()

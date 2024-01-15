@@ -1,16 +1,16 @@
 <?php
 
-namespace Zendesk\API\Traits\Utility;
+namespace Qurban\ZendeskAPI\Traits\Utility;
 
 /**
  * The chained parameters trait which has helper methods for getting the parameters passed through chaining.
  * An example would be a call `$client->ticket(2)->comments(3)->author();` would create an Author object with
  * chained parameters (An Array):
  *  [
- *      'Zendesk\API\Tickets' => 2,
- *      'Zendesk\API\Comments' => 3
+ *      'Qurban\ZendeskAPI\Tickets' => 2,
+ *      'Qurban\ZendeskAPI\Comments' => 3
  *  ]
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 
 trait ChainedParametersTrait
@@ -66,7 +66,7 @@ trait ChainedParametersTrait
      *
      * @param array $params The existing parameters
      * @param array $map    An array describing what parameter key corresponds to which classId
-     *                      e.g. ['ticket_id' => 'Zendesk\API\Ticket']
+     *                      e.g. ['ticket_id' => 'Qurban\ZendeskAPI\Ticket']
      *                      normal usage would be ['id' => $this::class]
      *
      * @return array

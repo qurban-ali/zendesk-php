@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API\Exceptions;
+namespace Qurban\ZendeskAPI\Exceptions;
 
 class RouteException extends \Exception
 {

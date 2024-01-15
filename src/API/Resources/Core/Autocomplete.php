@@ -1,8 +1,8 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 
 /**
  * The Autocomplete class is as per http://developer.zendesk.com/documentation/rest_api/autocomplete.html

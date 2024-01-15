@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Packages\Zendesk\API\Resources\CustomData;
+namespace App\Packages\Qurban\ZendeskAPI\Resources\CustomData;
 
-use Zendesk\API\Traits\Resource\ResourceName;
+use Qurban\ZendeskAPI\Traits\Resource\ResourceName;
 
 /**
  * Abstract class for HelpCenter resources
  */
-abstract class ResourceAbstract extends \Zendesk\API\Resources\ResourceAbstract
+abstract class ResourceAbstract extends \Qurban\ZendeskAPI\Resources\ResourceAbstract
 {
     use ResourceName;
 

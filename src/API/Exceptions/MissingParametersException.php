@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\API\Exceptions;
+namespace Qurban\ZendeskAPI\Exceptions;
 
 /**
  * MissingParametersException extends the Exception class with simplified messaging
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class MissingParametersException extends \Exception
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\API\Exceptions;
+namespace Qurban\ZendeskAPI\Exceptions;
 
 /**
  * AuthException is for auth specific errors
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class AuthException extends \Exception
 {

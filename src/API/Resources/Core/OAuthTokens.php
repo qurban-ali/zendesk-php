@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Delete;
-use Zendesk\API\Traits\Resource\Find;
-use Zendesk\API\Traits\Resource\FindAll;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Delete;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Traits\Resource\FindAll;
 
 /**
  * Class OAuthTokens
@@ -41,7 +41,7 @@ class OAuthTokens extends ResourceAbstract
      * @param null $id
      *
      * @return bool
-     * @throws \Zendesk\API\Exceptions\MissingParametersException
+     * @throws \Qurban\ZendeskAPI\Exceptions\MissingParametersException
      */
     public function revoke($id = null)
     {
@@ -52,7 +52,7 @@ class OAuthTokens extends ResourceAbstract
      * Shows the current token
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function current()
     {

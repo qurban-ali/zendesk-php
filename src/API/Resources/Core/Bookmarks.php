@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Create;
-use Zendesk\API\Traits\Resource\Delete;
-use Zendesk\API\Traits\Resource\FindAll;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Create;
+use Qurban\ZendeskAPI\Traits\Resource\Delete;
+use Qurban\ZendeskAPI\Traits\Resource\FindAll;
 
 /**
  * Class Bookmarks

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Packages\Zendesk\API\Resources\CustomData;
+namespace App\Packages\Qurban\ZendeskAPI\Resources\CustomData;
 
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * Class CustomObjects

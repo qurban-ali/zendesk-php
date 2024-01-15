@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Resources\Talk;
+namespace Qurban\ZendeskAPI\Resources\Talk;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Exceptions\ResponseException;
-use Zendesk\API\Http;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Exceptions\ResponseException;
+use Qurban\ZendeskAPI\Http;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * The Stats class exposes key methods for reading Talk Stats.
@@ -32,8 +32,8 @@ class Stats extends ResourceAbstract
      *
      * @throws \Exception
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function currentQueue()
     {
@@ -47,8 +47,8 @@ class Stats extends ResourceAbstract
      *
      * @throws \Exception
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function accountOverview()
     {
@@ -62,8 +62,8 @@ class Stats extends ResourceAbstract
      *
      * @throws \Exception
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function agentsOverview()
     {
@@ -77,8 +77,8 @@ class Stats extends ResourceAbstract
      *
      * @throws \Exception
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function agentsActivity()
     {

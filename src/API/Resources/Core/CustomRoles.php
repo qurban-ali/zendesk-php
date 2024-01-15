@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\FindAll;
-use Zendesk\API\Traits\Utility\Pagination\SinglePageStrategy;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\FindAll;
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\SinglePageStrategy;
 
 /**
  * Class CustomRoles

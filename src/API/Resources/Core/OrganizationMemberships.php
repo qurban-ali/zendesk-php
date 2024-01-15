@@ -1,13 +1,13 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\CreateMany;
-use Zendesk\API\Traits\Resource\Defaults;
-use Zendesk\API\Traits\Resource\DeleteMany;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\CreateMany;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\DeleteMany;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * Class OrganizationMemberships

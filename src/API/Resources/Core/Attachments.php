@@ -1,18 +1,18 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
 use Psr\Http\Message\StreamInterface;
-use Zendesk\API\Exceptions\CustomException;
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Http;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Delete;
-use Zendesk\API\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Exceptions\CustomException;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Http;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Delete;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
 
 /**
  * The Attachments class exposes methods for uploading and retrieving attachments
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class Attachments extends ResourceAbstract
 {
@@ -92,7 +92,7 @@ class Attachments extends ResourceAbstract
      * @return bool
      * @throws MissingParametersException
      * @throws \Exception
-     * @throws \Zendesk\API\Exceptions\ResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ResponseException
      */
     public function deleteUpload($token)
     {

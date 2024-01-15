@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 
 /**
  * The Push Notification Devices class exposes methods seen at
@@ -29,7 +29,7 @@ class PushNotificationDevices extends ResourceAbstract
      *
      * @return null
      * @throws MissingParametersException
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function deleteMany(array $params = [])
     {

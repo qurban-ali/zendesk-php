@@ -1,8 +1,8 @@
 <?php
 
-namespace Zendesk\API\Resources\Chat;
+namespace Qurban\ZendeskAPI\Resources\Chat;
 
-use Zendesk\API\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 
 /**
  * The Apps class exposes app management methods

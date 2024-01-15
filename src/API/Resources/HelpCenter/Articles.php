@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Resources\HelpCenter;
+namespace Qurban\ZendeskAPI\Resources\HelpCenter;
 
-use Zendesk\API\Exceptions\RouteException;
-use Zendesk\API\Traits\Resource\Defaults;
-use Zendesk\API\Traits\Resource\Locales;
-use Zendesk\API\Traits\Resource\Search;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\Locales;
+use Qurban\ZendeskAPI\Traits\Resource\Search;
 
 /**
  * Class Articles

@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * The Macros class exposes methods seen at http://developer.zendesk.com/documentation/rest_api/macros.html
@@ -48,7 +48,7 @@ class Macros extends ResourceAbstract
      * @return mixed
      * @throws MissingParametersException
      * @throws \Exception
-     * @throws \Zendesk\API\Exceptions\ResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ResponseException
      */
     public function apply($id)
     {
@@ -74,7 +74,7 @@ class Macros extends ResourceAbstract
      * @return \stdClass | null
      * @throws MissingParametersException
      * @throws \Exception
-     * @throws \Zendesk\API\Exceptions\ResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ResponseException
      */
     public function applyToTicket($id, $ticketId)
     {

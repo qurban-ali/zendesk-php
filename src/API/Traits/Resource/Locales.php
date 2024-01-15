@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
 /**
  * Trait Locale
@@ -71,7 +71,7 @@ trait Locales
      * @param string $sourceLocale The new source_locale
      *
      * @return array
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function updateSourceLocale($categoryId, $sourceLocale)
     {

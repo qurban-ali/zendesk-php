@@ -1,16 +1,16 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Defaults;
-use Zendesk\API\Traits\Resource\MultipartUpload;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\MultipartUpload;
 
 /**
  * The Brands class exposes methods as detailed on
  * https://developer.zendesk.com/rest_api/docs/core/brands
  *
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class Brands extends ResourceAbstract
 {
@@ -34,7 +34,7 @@ class Brands extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function checkHostMapping(array $params = [])
     {

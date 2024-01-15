@@ -1,13 +1,13 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
 use Psr\Http\Message\StreamInterface;
 use GuzzleHttp\Psr7\LazyOpenStream;
-use Zendesk\API\Exceptions\CustomException;
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Exceptions\RouteException;
-use Zendesk\API\Http;
+use Qurban\ZendeskAPI\Exceptions\CustomException;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
+use Qurban\ZendeskAPI\Http;
 
 /**
  * Trait MultipartUpload

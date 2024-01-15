@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Exceptions;
+namespace Qurban\ZendeskAPI\Exceptions;
 
 /**
  * ResponseException extends the Exception class with simplified messaging
  *
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class ResponseException extends \Exception
 {

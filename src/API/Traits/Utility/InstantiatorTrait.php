@@ -1,13 +1,13 @@
 <?php
 
-namespace Zendesk\API\Traits\Utility;
+namespace Qurban\ZendeskAPI\Traits\Utility;
 
-use Zendesk\API\HttpClient;
-use Zendesk\API\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\HttpClient;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 
 /**
  * The Instantiator trait which has the magic methods for instantiating Resources
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  *
  */
 trait InstantiatorTrait

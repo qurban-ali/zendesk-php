@@ -1,15 +1,15 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * The TicketAudits class exposes read only audit methods
  *
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class TicketAudits extends ResourceAbstract
 {

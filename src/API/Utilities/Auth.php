@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Utilities;
+namespace Qurban\ZendeskAPI\Utilities;
 
 use Psr\Http\Message\RequestInterface;
-use Zendesk\API\Exceptions\AuthException;
+use Qurban\ZendeskAPI\Exceptions\AuthException;
 
 /**
  * Class Auth

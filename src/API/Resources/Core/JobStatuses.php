@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Find;
-use Zendesk\API\Traits\Resource\FindMany;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Traits\Resource\FindMany;
 
 /**
  * Class JobStatuses

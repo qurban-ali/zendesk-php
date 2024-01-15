@@ -1,10 +1,10 @@
 <?php
 
-namespace Zendesk\API\Resources\HelpCenter;
+namespace Qurban\ZendeskAPI\Resources\HelpCenter;
 
-use Zendesk\API\Traits\Resource\Defaults;
-use Zendesk\API\Traits\Resource\Locales;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\Locales;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * Class Sections

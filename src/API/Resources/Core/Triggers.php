@@ -1,8 +1,8 @@
 <?php
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * The Triggers class exposes field management methods for triggers
@@ -25,7 +25,7 @@ class Triggers extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function findActive($params = [])
     {

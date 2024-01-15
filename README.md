@@ -16,14 +16,14 @@ To install run `composer require qurbanali/zendesk-php`
 
 ## Configuration
 
-Configuration is done through an instance of `Zendesk\API\HttpClient`.
+Configuration is done through an instance of `Qurban\ZendeskAPI\HttpClient`.
 The block is mandatory and if not passed, an error will be thrown.
 
 ``` php
 // load Composer
 require 'vendor/autoload.php';
 
-use Zendesk\API\HttpClient as ZendeskAPI;
+use Qurban\ZendeskAPI\HttpClient as ZendeskAPI;
 
 $subdomain = "subdomain";
 $username  = "email@example.com"; // replace this with your registered email
@@ -170,8 +170,8 @@ $iterator = $client->automations()->iterator($params, 'findActive');
 Which is analogous to:
 
 ```php
-use Zendesk\API\Traits\Utility\Pagination\PaginationIterator;
-use Zendesk\API\Traits\Utility\Pagination\CbpStrategy;
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\PaginationIterator;
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\CbpStrategy;
 $strategy = new CbpStrategy('automations', $params);
 $iterator = new PaginationIterator(
     $client->automations(),
@@ -237,7 +237,7 @@ do {
 
 ### Retrying Requests
 
-Add the `RetryHandler` middleware on the `HandlerStack` of your `GuzzleHttp\Client` instance. By default `Zendesk\Api\HttpClient`
+Add the `RetryHandler` middleware on the `HandlerStack` of your `GuzzleHttp\Client` instance. By default `Qurban\ZendeskAPI\HttpClient`
 retries:
 
 * timeout requests

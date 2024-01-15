@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Resources;
+namespace Qurban\ZendeskAPI\Resources;
 
 use Inflect\Inflect;
-use Zendesk\API\Exceptions\RouteException;
-use Zendesk\API\HttpClient;
-use Zendesk\API\Traits\Utility\ChainedParametersTrait;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
+use Qurban\ZendeskAPI\HttpClient;
+use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
 
 /**
  * Abstract class for all endpoints
@@ -30,7 +30,7 @@ abstract class ResourceAbstract
     protected $objectNamePlural;
 
     /**
-     * @var \Zendesk\API\HttpClient
+     * @var \Qurban\ZendeskAPI\HttpClient
      */
     protected $client;
     /**
@@ -84,7 +84,7 @@ abstract class ResourceAbstract
      *    $client->ticket()->comments();
      *    Where ticket would have a comments as a valid sub resource.
      *    The array would look like:
-     *      ['comments' => '\Zendesk\API\Resources\TicketComments']
+     *      ['comments' => '\Qurban\ZendeskAPI\Resources\TicketComments']
      *
      * @return array
      */

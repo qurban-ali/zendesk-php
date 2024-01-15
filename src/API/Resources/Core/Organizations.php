@@ -1,14 +1,14 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\CreateMany;
-use Zendesk\API\Traits\Resource\Defaults;
-use Zendesk\API\Traits\Resource\DeleteMany;
-use Zendesk\API\Traits\Resource\FindMany;
-use Zendesk\API\Traits\Resource\UpdateMany;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\CreateMany;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\DeleteMany;
+use Qurban\ZendeskAPI\Traits\Resource\FindMany;
+use Qurban\ZendeskAPI\Traits\Resource\UpdateMany;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * Class Organizations
@@ -100,8 +100,8 @@ class Organizations extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
-     * @throws \Zendesk\API\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      */
     public function autocomplete($name, array $params = [])
     {
@@ -116,8 +116,8 @@ class Organizations extends ResourceAbstract
      * @param int $id Organization ID
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
-     * @throws \Zendesk\API\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      */
     public function related($id)
     {
@@ -131,8 +131,8 @@ class Organizations extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
-     * @throws \Zendesk\API\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      */
     public function search($external_id, array $params = [])
     {

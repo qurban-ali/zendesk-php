@@ -1,14 +1,14 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\RouteException;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Delete;
-use Zendesk\API\Traits\Resource\Find;
-use Zendesk\API\Traits\Resource\FindAll;
-use Zendesk\API\Traits\Resource\Update;
-use Zendesk\API\Traits\Utility\Pagination\SinglePageStrategy;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Delete;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Traits\Resource\FindAll;
+use Qurban\ZendeskAPI\Traits\Resource\Update;
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\SinglePageStrategy;
 
 /**
  * The AppInstallations class exposes methods seen at
@@ -69,7 +69,7 @@ class AppInstallations extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\MissingParametersException
+     * @throws \Qurban\ZendeskAPI\Exceptions\MissingParametersException
      */
     public function requirements($appInstallationId = null, array $params = [])
     {

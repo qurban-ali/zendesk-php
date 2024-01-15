@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 
 /**
  * Class Search
@@ -34,7 +34,7 @@ class Search extends ResourceAbstract
      *
      * @return \stdClass | null
      * @throws MissingParametersException
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function find($query = null, array $queryParams = [])
     {
@@ -56,7 +56,7 @@ class Search extends ResourceAbstract
      * @param array $queryParams
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function anonymous($query, $queryParams = [])
     {

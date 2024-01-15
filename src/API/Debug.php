@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API;
+namespace Qurban\ZendeskAPI;
 
 /**
  * Debug helper class

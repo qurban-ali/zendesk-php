@@ -1,8 +1,8 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
-use Zendesk\API\Exceptions\RouteException;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
 
 trait FindAll
 {
@@ -17,8 +17,8 @@ trait FindAll
      * @param string $routeKey
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function findAll(array $params = [], $routeKey = __FUNCTION__)
     {

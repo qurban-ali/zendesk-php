@@ -1,8 +1,8 @@
 <?php
 
-namespace Zendesk\API\Resources\Voice;
+namespace Qurban\ZendeskAPI\Resources\Voice;
 
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * Class PhoneNumbers
@@ -26,7 +26,7 @@ class PhoneNumbers extends ResourceAbstract
      * @param array $queryParams
      *
      * @return \stdClass
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function search(array $queryParams = [])
     {

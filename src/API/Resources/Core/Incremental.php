@@ -1,8 +1,8 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 
 /**
  * Class IncrementalExports
@@ -29,7 +29,7 @@ class Incremental extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function tickets(array $params)
     {
@@ -42,7 +42,7 @@ class Incremental extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function ticketEvents(array $params)
     {
@@ -55,7 +55,7 @@ class Incremental extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function organizations(array $params)
     {
@@ -68,7 +68,7 @@ class Incremental extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      */
     public function users(array $params)
     {

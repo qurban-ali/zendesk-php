@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Exceptions\RouteException;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
 
 trait Find
 {

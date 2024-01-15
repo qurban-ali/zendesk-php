@@ -1,14 +1,14 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * The Automations class exposes methods seen at http://developer.zendesk.com/documentation/rest_api/automations.html
  *
- * @package Zendesk\API
+ * @package Qurban\ZendeskAPI
  */
 class Automations extends ResourceAbstract
 {

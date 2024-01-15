@@ -1,8 +1,8 @@
 <?php
 
-namespace Zendesk\API\Resources\HelpCenter;
+namespace Qurban\ZendeskAPI\Resources\HelpCenter;
 
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * Class Articles

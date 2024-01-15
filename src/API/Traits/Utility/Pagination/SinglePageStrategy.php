@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API\Traits\Utility\Pagination;
+namespace Qurban\ZendeskAPI\Traits\Utility\Pagination;
 
 
 /**

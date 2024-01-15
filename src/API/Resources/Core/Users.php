@@ -1,19 +1,19 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\CustomException;
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Exceptions\ResponseException;
-use Zendesk\API\Http;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\CreateMany;
-use Zendesk\API\Traits\Resource\CreateOrUpdateMany;
-use Zendesk\API\Traits\Resource\Defaults;
-use Zendesk\API\Traits\Resource\FindMany;
-use Zendesk\API\Traits\Resource\MultipartUpload;
-use Zendesk\API\Traits\Resource\UpdateMany;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Exceptions\CustomException;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Exceptions\ResponseException;
+use Qurban\ZendeskAPI\Http;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\CreateMany;
+use Qurban\ZendeskAPI\Traits\Resource\CreateOrUpdateMany;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Traits\Resource\FindMany;
+use Qurban\ZendeskAPI\Traits\Resource\MultipartUpload;
+use Qurban\ZendeskAPI\Traits\Resource\UpdateMany;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * The Users class exposes user management methods

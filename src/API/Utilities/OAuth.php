@@ -1,13 +1,13 @@
 <?php
 
-namespace Zendesk\API\Utilities;
+namespace Qurban\ZendeskAPI\Utilities;
 
 use InvalidArgumentException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Utils;
-use Zendesk\API\Exceptions\ApiResponseException;
+use Qurban\ZendeskAPI\Exceptions\ApiResponseException;
 
 class OAuth
 {
@@ -22,7 +22,7 @@ class OAuth
      * @return array
      * @throws ApiResponseException
      */
-    public static function getAccessToken(Client $client, $subdomain, array $params, $domain = 'zendesk.com')
+    public static function getAccessToken(Client $client, string $subdomain, array $params, string $domain = 'zendesk.com')
     {
         static::validateSubdomain($subdomain);
         $authUrl  = "https://$subdomain.$domain/oauth/tokens";

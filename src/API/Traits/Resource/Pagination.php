@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
-use Zendesk\API\Traits\Utility\Pagination\CbpStrategy;
-use Zendesk\API\Traits\Utility\Pagination\PaginationIterator;
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\CbpStrategy;
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\PaginationIterator;
 
 trait Pagination {
     /**

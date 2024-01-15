@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
-use Zendesk\API\Exceptions\RouteException;
-use Zendesk\API\Http;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
+use Qurban\ZendeskAPI\Http;
 
 /**
  * Allows resources to call a bulk delete endpoint.

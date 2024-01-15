@@ -1,8 +1,8 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
-use Zendesk\API\Exceptions\RouteException;
+use Qurban\ZendeskAPI\Exceptions\RouteException;
 
 trait Create
 {

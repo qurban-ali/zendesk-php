@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Traits\Resource;
+namespace Qurban\ZendeskAPI\Traits\Resource;
 
 /**
  * This trait gives resources access to the default CRUD methods.
  *
- * @package Zendesk\API\Traits\Resource
+ * @package Qurban\ZendeskAPI\Traits\Resource
  */
 trait Defaults
 {

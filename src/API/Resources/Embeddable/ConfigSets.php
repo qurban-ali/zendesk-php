@@ -1,9 +1,9 @@
 <?php
 
-namespace Zendesk\API\Resources\Embeddable;
+namespace Qurban\ZendeskAPI\Resources\Embeddable;
 
-use Zendesk\API\Traits\Resource\Create;
-use Zendesk\API\Traits\Resource\Update;
+use Qurban\ZendeskAPI\Traits\Resource\Create;
+use Qurban\ZendeskAPI\Traits\Resource\Update;
 
 /**
  * Class ConfigSets

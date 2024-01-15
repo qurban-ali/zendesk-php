@@ -1,14 +1,14 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Http;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Delete;
-use Zendesk\API\Traits\Resource\DeleteMany;
-use Zendesk\API\Traits\Resource\Find;
-use Zendesk\API\Traits\Resource\FindAll;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Http;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Delete;
+use Qurban\ZendeskAPI\Traits\Resource\DeleteMany;
+use Qurban\ZendeskAPI\Traits\Resource\Find;
+use Qurban\ZendeskAPI\Traits\Resource\FindAll;
 
 /**
  * The SuspendedTickets class exposes view management methods
@@ -61,8 +61,8 @@ class SuspendedTickets extends ResourceAbstract
      *
      * @return \stdClass | null
      * @throws MissingParametersException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
-     * @throws \Zendesk\API\Exceptions\RouteException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\RouteException
      *
      */
     public function recoverMany(array $ids)

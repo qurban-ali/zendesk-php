@@ -1,6 +1,6 @@
 <?php
 
-namespace Zendesk\API;
+namespace Qurban\ZendeskAPI;
 
 /*
  * Dead simple autoloader:
@@ -9,60 +9,60 @@ namespace Zendesk\API;
 
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
-use Zendesk\API\Exceptions\AuthException;
-use Zendesk\API\Middleware\RetryHandler;
-use Zendesk\API\Resources\Chat;
-use Zendesk\API\Resources\Core\Activities;
-use Zendesk\API\Resources\Core\AppInstallations;
-use Zendesk\API\Resources\Core\Apps;
-use Zendesk\API\Resources\Core\Attachments;
-use Zendesk\API\Resources\Core\AuditLogs;
-use Zendesk\API\Resources\Core\Autocomplete;
-use Zendesk\API\Resources\Core\Automations;
-use Zendesk\API\Resources\Core\Bookmarks;
-use Zendesk\API\Resources\Core\Brands;
-use Zendesk\API\Resources\Core\CustomRoles;
-use Zendesk\API\Resources\Core\DynamicContent;
-use Zendesk\API\Resources\Core\GroupMemberships;
-use Zendesk\API\Resources\Core\Groups;
-use Zendesk\API\Resources\Core\Incremental;
-use Zendesk\API\Resources\Core\JobStatuses;
-use Zendesk\API\Resources\Core\Locales;
-use Zendesk\API\Resources\Core\Macros;
-use Zendesk\API\Resources\Core\OAuthClients;
-use Zendesk\API\Resources\Core\OAuthTokens;
-use Zendesk\API\Resources\Core\OrganizationFields;
-use Zendesk\API\Resources\Core\OrganizationMemberships;
-use Zendesk\API\Resources\Core\Organizations;
-use Zendesk\API\Resources\Core\OrganizationSubscriptions;
-use Zendesk\API\Resources\Core\PushNotificationDevices;
-use Zendesk\API\Resources\Core\Requests;
-use Zendesk\API\Resources\Core\SatisfactionRatings;
-use Zendesk\API\Resources\Core\Search;
-use Zendesk\API\Resources\Core\Sessions;
-use Zendesk\API\Resources\Core\SharingAgreements;
-use Zendesk\API\Resources\Core\SlaPolicies;
-use Zendesk\API\Resources\Core\SupportAddresses;
-use Zendesk\API\Resources\Core\SuspendedTickets;
-use Zendesk\API\Resources\Core\Tags;
-use Zendesk\API\Resources\Core\Targets;
-use Zendesk\API\Resources\Core\TicketFields;
-use Zendesk\API\Resources\Core\TicketImports;
-use Zendesk\API\Resources\Core\Tickets;
-use Zendesk\API\Resources\Core\Translations;
-use Zendesk\API\Resources\Core\Triggers;
-use Zendesk\API\Resources\Core\TwitterHandles;
-use Zendesk\API\Resources\Core\UserFields;
-use Zendesk\API\Resources\Core\Users;
-use Zendesk\API\Resources\Core\Views;
-use Zendesk\API\Resources\Core\Webhooks;
-use Zendesk\API\Resources\Embeddable;
-use Zendesk\API\Resources\HelpCenter;
-use Zendesk\API\Resources\Talk;
-use Zendesk\API\Resources\Voice;
-use Zendesk\API\Resources\CustomData;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
-use Zendesk\API\Utilities\Auth;
+use Qurban\ZendeskAPI\Exceptions\AuthException;
+use Qurban\ZendeskAPI\Middleware\RetryHandler;
+use Qurban\ZendeskAPI\Resources\Chat;
+use Qurban\ZendeskAPI\Resources\Core\Activities;
+use Qurban\ZendeskAPI\Resources\Core\AppInstallations;
+use Qurban\ZendeskAPI\Resources\Core\Apps;
+use Qurban\ZendeskAPI\Resources\Core\Attachments;
+use Qurban\ZendeskAPI\Resources\Core\AuditLogs;
+use Qurban\ZendeskAPI\Resources\Core\Autocomplete;
+use Qurban\ZendeskAPI\Resources\Core\Automations;
+use Qurban\ZendeskAPI\Resources\Core\Bookmarks;
+use Qurban\ZendeskAPI\Resources\Core\Brands;
+use Qurban\ZendeskAPI\Resources\Core\CustomRoles;
+use Qurban\ZendeskAPI\Resources\Core\DynamicContent;
+use Qurban\ZendeskAPI\Resources\Core\GroupMemberships;
+use Qurban\ZendeskAPI\Resources\Core\Groups;
+use Qurban\ZendeskAPI\Resources\Core\Incremental;
+use Qurban\ZendeskAPI\Resources\Core\JobStatuses;
+use Qurban\ZendeskAPI\Resources\Core\Locales;
+use Qurban\ZendeskAPI\Resources\Core\Macros;
+use Qurban\ZendeskAPI\Resources\Core\OAuthClients;
+use Qurban\ZendeskAPI\Resources\Core\OAuthTokens;
+use Qurban\ZendeskAPI\Resources\Core\OrganizationFields;
+use Qurban\ZendeskAPI\Resources\Core\OrganizationMemberships;
+use Qurban\ZendeskAPI\Resources\Core\Organizations;
+use Qurban\ZendeskAPI\Resources\Core\OrganizationSubscriptions;
+use Qurban\ZendeskAPI\Resources\Core\PushNotificationDevices;
+use Qurban\ZendeskAPI\Resources\Core\Requests;
+use Qurban\ZendeskAPI\Resources\Core\SatisfactionRatings;
+use Qurban\ZendeskAPI\Resources\Core\Search;
+use Qurban\ZendeskAPI\Resources\Core\Sessions;
+use Qurban\ZendeskAPI\Resources\Core\SharingAgreements;
+use Qurban\ZendeskAPI\Resources\Core\SlaPolicies;
+use Qurban\ZendeskAPI\Resources\Core\SupportAddresses;
+use Qurban\ZendeskAPI\Resources\Core\SuspendedTickets;
+use Qurban\ZendeskAPI\Resources\Core\Tags;
+use Qurban\ZendeskAPI\Resources\Core\Targets;
+use Qurban\ZendeskAPI\Resources\Core\TicketFields;
+use Qurban\ZendeskAPI\Resources\Core\TicketImports;
+use Qurban\ZendeskAPI\Resources\Core\Tickets;
+use Qurban\ZendeskAPI\Resources\Core\Translations;
+use Qurban\ZendeskAPI\Resources\Core\Triggers;
+use Qurban\ZendeskAPI\Resources\Core\TwitterHandles;
+use Qurban\ZendeskAPI\Resources\Core\UserFields;
+use Qurban\ZendeskAPI\Resources\Core\Users;
+use Qurban\ZendeskAPI\Resources\Core\Views;
+use Qurban\ZendeskAPI\Resources\Core\Webhooks;
+use Qurban\ZendeskAPI\Resources\Embeddable;
+use Qurban\ZendeskAPI\Resources\HelpCenter;
+use Qurban\ZendeskAPI\Resources\Talk;
+use Qurban\ZendeskAPI\Resources\Voice;
+use Qurban\ZendeskAPI\Resources\CustomData;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Utilities\Auth;
 
 /**
  * Client class, base level access
@@ -163,7 +163,7 @@ class HttpClient
     /**
      * Whether or not to print every API call details right before execution
      *
-     * E.G.: Zendesk\API\Http: GET https://my_company.zendesk.com/api/v2/tickets.json
+     * E.G.: Qurban\ZendeskAPI\Http: GET https://my_company.zendesk.com/api/v2/tickets.json
      *
      * @var boolean
      */
@@ -473,8 +473,8 @@ class HttpClient
      * @param array $queryParams
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function get($endpoint, $queryParams = [])
     {
@@ -502,8 +502,8 @@ class HttpClient
      *
      * @param array $options
      * @return null|\stdClass
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function post($endpoint, $postData = [], $options = [])
     {
@@ -528,8 +528,8 @@ class HttpClient
      * @param array $putData
      *
      * @return \stdClass | null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function put($endpoint, $putData = [])
     {
@@ -548,8 +548,8 @@ class HttpClient
      * @param $endpoint
      *
      * @return null
-     * @throws \Zendesk\API\Exceptions\AuthException
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
     public function delete($endpoint)
     {

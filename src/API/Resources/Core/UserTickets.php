@@ -1,12 +1,12 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Exceptions\ResponseException;
-use Zendesk\API\Http;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Exceptions\ResponseException;
+use Qurban\ZendeskAPI\Http;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 
 /**
  * The UserTickets class exposes methods to retrieve tickets created, cc'ed to, or

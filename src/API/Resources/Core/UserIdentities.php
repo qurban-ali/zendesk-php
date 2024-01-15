@@ -1,11 +1,11 @@
 <?php
 
-namespace Zendesk\API\Resources\Core;
+namespace Qurban\ZendeskAPI\Resources\Core;
 
-use Zendesk\API\Exceptions\MissingParametersException;
-use Zendesk\API\Http;
-use Zendesk\API\Resources\ResourceAbstract;
-use Zendesk\API\Traits\Resource\Defaults;
+use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
+use Qurban\ZendeskAPI\Http;
+use Qurban\ZendeskAPI\Resources\ResourceAbstract;
+use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
  * The UserIdentities class exposes fields on the user profile page
@@ -174,8 +174,8 @@ class UserIdentities extends ResourceAbstract
      * @return \stdClass | null
      * @throws MissingParametersException
      * @throws \Exception
-     * @throws \Zendesk\API\Exceptions\ApiResponseException
-     * @throws \Zendesk\API\Exceptions\AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      */
     private function makePutRequest($callingMethod, $params = [])
     {
