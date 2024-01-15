@@ -33,7 +33,7 @@ trait Pagination {
     }
 
     /**
-     * The key in the API responses where the resources are returned
+     * The key in the ZendeskAPI responses where the resources are returned
      *
      * @return string eg: "job_statuses"
      */

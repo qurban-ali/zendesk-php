@@ -161,7 +161,7 @@ class HttpClient
     protected $debug;
 
     /**
-     * Whether or not to print every API call details right before execution
+     * Whether or not to print every ZendeskAPI call details right before execution
      *
      * E.G.: Qurban\ZendeskAPI\Http: GET https://my_company.zendesk.com/api/v2/tickets.json
      *

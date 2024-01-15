@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Qurban\\ZendeskAPI\\": "src/"
+            "Qurban\\": "src/"
         }
     },
     "minimum-stability": "stable"

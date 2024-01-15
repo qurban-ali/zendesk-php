@@ -25,7 +25,7 @@ class Search extends ResourceAbstract
 
     /**
      *
-     * The search API is a unified search API that returns tickets, users, and organizations. You can define filters to
+     * The search ZendeskAPI is a unified search ZendeskAPI that returns tickets, users, and organizations. You can define filters to
      * narrow your search results according to resource type, dates, and object properties, such as ticket requester or
      * tag.
      *

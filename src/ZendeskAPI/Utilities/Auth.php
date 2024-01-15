@@ -16,7 +16,7 @@ class Auth
      */
     const OAUTH = 'oauth';
     /**
-     * The authentication setting to use Basic authentication with a username and API Token.
+     * The authentication setting to use Basic authentication with a username and ZendeskAPI Token.
      */
     const BASIC = 'basic';
 

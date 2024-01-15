@@ -110,7 +110,7 @@ class UserIdentities extends ResourceAbstract
     }
 
     /**
-     * This API method allows you to set an identity to primary.
+     * This ZendeskAPI method allows you to set an identity to primary.
      *
      * @param array $params
      * @return null|\stdClass
@@ -121,7 +121,7 @@ class UserIdentities extends ResourceAbstract
     }
 
     /**
-     * This API method only allows you to set an identity as verified. This is allowed only for agents.
+     * This ZendeskAPI method only allows you to set an identity as verified. This is allowed only for agents.
      *
      * @param array $params
      * @return null|\stdClass

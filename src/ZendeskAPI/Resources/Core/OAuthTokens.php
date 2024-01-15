@@ -36,7 +36,7 @@ class OAuthTokens extends ResourceAbstract
     }
 
     /**
-     * Wrapper for `delete`, called `revoke` in the API docs.
+     * Wrapper for `delete`, called `revoke` in the ZendeskAPI docs.
      *
      * @param null $id
      *

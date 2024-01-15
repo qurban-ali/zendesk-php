@@ -37,7 +37,7 @@ class Incremental extends ResourceAbstract
     }
 
     /**
-     * The Ticket Events Incremental Export API returns a an stream changes that have occurred on tickets.
+     * The Ticket Events Incremental Export ZendeskAPI returns a an stream changes that have occurred on tickets.
      *
      * @param array $params
      *
