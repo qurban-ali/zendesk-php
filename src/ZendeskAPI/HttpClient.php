@@ -114,7 +114,7 @@ use Qurban\ZendeskAPI\Utilities\Auth;
  */
 class HttpClient
 {
-    const VERSION = '1.0.1';
+    const VERSION = '1.0.2';
 
     use InstantiatorTrait;
 
