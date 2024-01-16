@@ -2,7 +2,7 @@
 
 namespace Qurban\ZendeskAPI\Resources;
 
-use App\Packages\Qurban\ZendeskAPI\Resources\CustomData\CustomObjects;
+use Qurban\ZendeskAPI\Resources\CustomData\CustomObjects;
 use Qurban\ZendeskAPI\HttpClient;
 use Qurban\ZendeskAPI\Resources\HelpCenter\Categories;
 use Qurban\ZendeskAPI\Resources\HelpCenter\Sections;

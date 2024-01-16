@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Packages\Qurban\ZendeskAPI\Resources\CustomData;
+namespace Qurban\ZendeskAPI\Resources\CustomData;
 
 use Qurban\ZendeskAPI\Traits\Resource\ResourceName;
 
