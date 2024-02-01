@@ -2,6 +2,7 @@
 
 namespace Qurban\ZendeskAPI\Resources\CustomData;
 
+use Qurban\ZendeskAPI\Exceptions\RouteException;
 use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 
 /**
@@ -12,6 +13,8 @@ class CustomObjects extends ResourceAbstract
 {
     use Defaults;
 
+    public string $customObjectName = '';
+
     /**
      * @{inheritdoc}
      */
@@ -19,6 +22,12 @@ class CustomObjects extends ResourceAbstract
 
     protected $resourceName = 'custom_objects';
 
+    public function __call(string $name, array $arguments)
+    {
+        $this->customObjectName = $name;
+
+        return $this;
+    }
 
     /**
      * @{inheritdoc}
