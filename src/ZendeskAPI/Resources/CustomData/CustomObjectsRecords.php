@@ -4,9 +4,7 @@ namespace Qurban\ZendeskAPI\Resources\CustomData;
 
 use Qurban\ZendeskAPI\Exceptions\ApiResponseException;
 use Qurban\ZendeskAPI\Exceptions\AuthException;
-use Qurban\ZendeskAPI\Exceptions\RouteException;
 use Qurban\ZendeskAPI\HttpClient;
-use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 use stdClass;
 
 /**

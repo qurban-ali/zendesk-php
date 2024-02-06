@@ -4,6 +4,7 @@ namespace Qurban\ZendeskAPI\Resources;
 
 use Qurban\ZendeskAPI\Resources\CustomData\CustomObjects;
 use Qurban\ZendeskAPI\HttpClient;
+use Qurban\ZendeskAPI\Resources\CustomData\CustomObjectsRecords;
 use Qurban\ZendeskAPI\Resources\HelpCenter\Categories;
 use Qurban\ZendeskAPI\Resources\HelpCenter\Sections;
 use Qurban\ZendeskAPI\Resources\HelpCenter\Articles;
@@ -40,6 +41,7 @@ class CustomData
     {
         return [
             'customObjects'    => CustomObjects::class,
+            'customObjectsRecords' => CustomObjectsRecords::class,
         ];
     }
 }
