@@ -5,7 +5,7 @@ namespace Qurban\ZendeskAPI\Resources;
 use Qurban\ZendeskAPI\HttpClient;
 use Qurban\ZendeskAPI\Resources\Voice\PhoneNumbers;
 use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * This class serves as a container to allow $this->client->helpCenter
@@ -15,7 +15,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 class Voice
 {
     use ChainedParametersTrait;
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     public $client;
 

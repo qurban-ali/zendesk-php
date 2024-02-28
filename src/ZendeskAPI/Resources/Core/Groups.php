@@ -4,7 +4,7 @@ namespace Qurban\ZendeskAPI\Resources\Core;
 
 use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 use Qurban\ZendeskAPI\Traits\Resource\Defaults;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * Class Groups
@@ -13,7 +13,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class Groups extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     use Defaults;
 

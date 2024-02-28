@@ -6,7 +6,7 @@ use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
 use Qurban\ZendeskAPI\Exceptions\ResponseException;
 use Qurban\ZendeskAPI\Http;
 use Qurban\ZendeskAPI\Resources\ResourceAbstract;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * The UserTickets class exposes methods to retrieve tickets created, cc'ed to, or
@@ -14,7 +14,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class UserTickets extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     /**
      * Wrapper for common GET requests

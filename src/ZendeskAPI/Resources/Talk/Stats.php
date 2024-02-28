@@ -5,7 +5,7 @@ namespace Qurban\ZendeskAPI\Resources\Talk;
 use Qurban\ZendeskAPI\Exceptions\MissingParametersException;
 use Qurban\ZendeskAPI\Exceptions\ResponseException;
 use Qurban\ZendeskAPI\Http;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * The Stats class exposes key methods for reading Talk Stats.

@@ -4,7 +4,7 @@ namespace Qurban\ZendeskAPI\Resources\HelpCenter;
 
 use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 use Qurban\ZendeskAPI\Traits\Resource\Locales;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * Class Sections
@@ -12,7 +12,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class Sections extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
     use Defaults;
     use Locales {
         getRoute as protected localesGetRoute;

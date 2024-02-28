@@ -8,7 +8,7 @@ use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 use Qurban\ZendeskAPI\Traits\Resource\DeleteMany;
 use Qurban\ZendeskAPI\Traits\Resource\FindMany;
 use Qurban\ZendeskAPI\Traits\Resource\UpdateMany;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * Class Organizations
@@ -20,7 +20,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class Organizations extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     use Defaults;
 

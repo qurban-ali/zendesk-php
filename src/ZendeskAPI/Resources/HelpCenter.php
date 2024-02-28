@@ -8,7 +8,7 @@ use Qurban\ZendeskAPI\Resources\HelpCenter\Sections;
 use Qurban\ZendeskAPI\Resources\HelpCenter\Articles;
 use Qurban\ZendeskAPI\Resources\HelpCenter\Themes;
 use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * This class serves as a container to allow $this->client->helpCenter
@@ -21,7 +21,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 class HelpCenter
 {
     use ChainedParametersTrait;
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     /**
      * Sets the client to be used

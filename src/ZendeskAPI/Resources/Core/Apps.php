@@ -7,7 +7,7 @@ use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 use Qurban\ZendeskAPI\Traits\Resource\Delete;
 use Qurban\ZendeskAPI\Traits\Resource\Find;
 use Qurban\ZendeskAPI\Traits\Resource\MultipartUpload;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * The Apps class exposes app management methods
@@ -16,7 +16,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class Apps extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     use Find;
     use Delete;

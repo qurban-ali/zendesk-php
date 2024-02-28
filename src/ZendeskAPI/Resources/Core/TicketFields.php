@@ -3,14 +3,14 @@ namespace Qurban\ZendeskAPI\Resources\Core;
 
 use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 use Qurban\ZendeskAPI\Traits\Resource\Defaults;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * The TicketFields class exposes field management methods for tickets
  */
 class TicketFields extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     use Defaults;
 

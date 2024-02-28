@@ -6,7 +6,7 @@ use Qurban\ZendeskAPI\HttpClient;
 use Qurban\ZendeskAPI\Resources\Chat\Apps;
 use Qurban\ZendeskAPI\Resources\Chat\Integrations;
 use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * This class serves as a container to allow calls to $this->client->chat
@@ -16,7 +16,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 class Chat
 {
     use ChainedParametersTrait;
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     public $client;
 

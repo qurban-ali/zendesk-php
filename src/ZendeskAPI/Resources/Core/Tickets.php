@@ -11,7 +11,7 @@ use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 use Qurban\ZendeskAPI\Traits\Resource\DeleteMany;
 use Qurban\ZendeskAPI\Traits\Resource\FindMany;
 use Qurban\ZendeskAPI\Traits\Resource\UpdateMany;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * The Tickets class exposes key methods for reading and updating ticket data
@@ -24,7 +24,8 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class Tickets extends ResourceAbstract
 {
-    use InstantiatorTrait;
+
+    use InstantiateTrait;
 
     use Defaults {
         create as traitCreate;
@@ -42,12 +43,12 @@ class Tickets extends ResourceAbstract
     /**
      * @var array
      */
-    protected $lastAttachments = [];
+    protected array $lastAttachments = [];
 
     /**
      * {@inheritdoc}
      */
-    public static function getValidSubResources()
+    public static function getValidSubResources(): array
     {
         return [
             'comments'            => TicketComments::class,
@@ -67,18 +68,11 @@ class Tickets extends ResourceAbstract
      * @param array $params
      *
      * @return \stdClass | null
-     * @throws ResponseException
-     * @throws \Exception
+     * @throws \Exception|\GuzzleHttp\Exception\GuzzleException
      */
-    private function sendGetRequest($route, array $params = [])
+    private function sendGetRequest($route, array $params = []): ?\stdClass
     {
-        $response = Http::send(
-            $this->client,
-            $this->getRoute($route, $params),
-            ['queryParams' => $params]
-        );
-
-        return $response;
+        return Http::send($this->client, $this->getRoute($route, $params), ['queryParams' => $params]);
     }
 
     /**
@@ -111,13 +105,13 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
      *
-     * @return \stdClass | null
+     * @throws MissingParametersException|\GuzzleHttp\Exception\GuzzleException
      */
-    public function findTwicket(array $params = [])
+    /*public function findTwicket(array $params = []): ?\stdClass
     {
         $params = $this->addChainedParametersToParams($params, ['id' => get_class($this)]);
 
@@ -125,32 +119,26 @@ class Tickets extends ResourceAbstract
             throw new MissingParametersException(__METHOD__, ['id']);
         }
         $endPointBase = 'channels/twitter/tickets/' . $params['id'] . '/statuses.json';
-        $endPoint     = Http::prepare(
-            $endPointBase . (is_array($params['comment_ids']) ? '?' . implode(',', $params['comment_ids']) : ''),
-            $this->client->getSideload($params)
-        );
+        $endPoint = Http::prepare($endPointBase . (is_array($params['comment_ids']) ? '?' . implode(',', $params['comment_ids']) : ''), $this->client->getSideload($params));
 
-        $response = Http::send($this->client, $endPoint);
-
-        return $response;
-    }
+        return Http::send($this->client, $endPoint);
+    }*/
 
     /**
      * Create a ticket
      *
      * @param array $params
      *
-     * @throws ResponseException
-     * @throws \Exception
      * @return \stdClass | null
+     * @throws \Exception
      * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
      */
-    public function create(array $params)
+    public function create(array $params): ?\stdClass
     {
         if (count($this->lastAttachments)) {
             $params['comment']['uploads'] = $this->lastAttachments;
-            $this->lastAttachments        = [];
+            $this->lastAttachments = [];
         }
 
         $extraOptions = [];
@@ -164,11 +152,7 @@ class Tickets extends ResourceAbstract
 
         $route = $this->getRoute(__FUNCTION__, $params);
 
-        return $this->client->post(
-            $route,
-            [$this->objectName => $params],
-            $extraOptions
-        );
+        return $this->client->post($route, [$this->objectName => $params], $extraOptions);
     }
 
     /**
@@ -176,44 +160,42 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
-     * @return \stdClass | null
+     * @throws MissingParametersException|\GuzzleHttp\Exception\GuzzleException
      */
-    public function createFromTweet(array $params)
+    /*public function createFromTweet(array $params): ?\stdClass
     {
         if ((! $params['twitter_status_message_id']) || (! $params['monitored_twitter_handle_id'])) {
-            throw new MissingParametersException(
-                __METHOD__,
-                ['twitter_status_message_id', 'monitored_twitter_handle_id']
-            );
+            throw new MissingParametersException(__METHOD__, [
+                    'twitter_status_message_id',
+                    'monitored_twitter_handle_id'
+                ]);
         }
-        $endPoint         = Http::prepare('channels/twitter/tickets.json');
-        $response         = Http::send($this->client, $endPoint, [self::OBJ_NAME => $params], 'POST');
+        $endPoint = Http::prepare('channels/twitter/tickets.json');
+        $response = Http::send($this->client, $endPoint, [self::OBJ_NAME => $params], 'POST');
         $lastResponseCode = $this->client->getDebug()->lastResponseCode;
         if ((! is_object($response)) || ($lastResponseCode != 201)) {
-            throw new ResponseException(
-                __METHOD__,
-                ($lastResponseCode == 422 ? ' (hint: you can\'t create two tickets from the same tweet)' : '')
-            );
+            throw new ResponseException(__METHOD__, ($lastResponseCode == 422 ? ' (hint: you can\'t create two tickets from the same tweet)' : ''));
         }
 
         return $response;
-    }
+    }*/
 
     /**
      * Update a ticket or series of tickets
      *
-     * @param int $id
+     * @param int   $id
      * @param array $updateResourceFields
+     *
      * @return null|\stdClass
      */
-    public function update($id = null, array $updateResourceFields = [])
+    public function update($id = null, array $updateResourceFields = []): ?\stdClass
     {
         if (count($this->lastAttachments)) {
             $updateResourceFields['comment']['uploads'] = $this->lastAttachments;
-            $this->lastAttachments                      = [];
+            $this->lastAttachments = [];
         }
 
         return $this->traitUpdate($id, $updateResourceFields);
@@ -224,16 +206,14 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
-     * @throws ResponseException
-     * @throws \Exception
      * @return \stdClass | null
+     * @throws \Exception
      */
-    public function updateMany(array $params)
+    public function updateMany(array $params): ?\stdClass
     {
         if (count($this->lastAttachments)) {
             $params['comment']['uploads'] = $this->lastAttachments;
-            $this->lastAttachments        = [];
+            $this->lastAttachments = [];
         }
 
         return $this->bulkUpdate($params);
@@ -244,30 +224,22 @@ class Tickets extends ResourceAbstract
      *
      * @param mixed $id The ticket ID, or an array of ticket ID's to mark as spam
      *
-     * @throws ResponseException
-     * @throws \Exception
+     * @throws \Exception|\GuzzleHttp\Exception\GuzzleException
      * @return \stdClass | null
      */
-    public function markAsSpam($id = null)
+    public function markAsSpam($id = null): ?\stdClass
     {
         $options = ['method' => 'PUT'];
 
         if (is_array($id)) {
             $options['queryParams']['ids'] = implode(',', $id);
-            $route                         = $this->getRoute('markManyAsSpam');
+            $route = $this->getRoute('markManyAsSpam');
         } else {
-            $params = $this->addChainedParametersToParams(
-                ['id' => $id],
-                ['id' => get_class($this)]
-            );
-            $route  = $this->getRoute('markAsSpam', $params);
+            $params = $this->addChainedParametersToParams(['id' => $id], ['id' => get_class($this)]);
+            $route = $this->getRoute('markAsSpam', $params);
         }
 
-        $response = Http::send(
-            $this->client,
-            $route,
-            $options
-        );
+        $response = Http::send($this->client, $route, $options);
 
         return $response;
     }
@@ -277,10 +249,10 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
-     * @return \stdClass | null
+     * @throws MissingParametersException
      */
     public function related(array $params = [])
     {
@@ -298,10 +270,10 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
-     * @return \stdClass | null
+     * @throws MissingParametersException
      */
     public function collaborators(array $params = [])
     {
@@ -319,10 +291,10 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
-     * @return \stdClass | null
+     * @throws MissingParametersException
      */
     public function incidents(array $params = [])
     {
@@ -340,10 +312,10 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
-     * @return \stdClass | null
+     * @throws MissingParametersException
      */
     public function problems(array $params = [])
     {
@@ -355,10 +327,10 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
-     * @return \stdClass | null
+     * @throws MissingParametersException
      */
     public function problemAutoComplete(array $params)
     {
@@ -366,14 +338,10 @@ class Tickets extends ResourceAbstract
             throw new MissingParametersException(__METHOD__, ['text']);
         }
 
-        $response = Http::send(
-            $this->client,
-            $this->getRoute('problemAutoComplete'),
-            [
+        $response = Http::send($this->client, $this->getRoute('problemAutoComplete'), [
                 'method'     => 'POST',
                 'postFields' => ['text' => $params['text']]
-            ]
-        );
+            ]);
 
         return $response;
     }
@@ -383,10 +351,10 @@ class Tickets extends ResourceAbstract
      *
      * @param array $params
      *
-     * @throws MissingParametersException
+     * @return \stdClass | null
      * @throws ResponseException
      * @throws \Exception
-     * @return \stdClass | null
+     * @throws MissingParametersException
      */
     public function export(array $params)
     {
@@ -396,11 +364,7 @@ class Tickets extends ResourceAbstract
 
         $queryParams = ["start_time" => $params["start_time"]];
 
-        $response = Http::send(
-            $this->client,
-            $this->getRoute('export'),
-            ['queryParams' => $queryParams]
-        );
+        $response = Http::send($this->client, $this->getRoute('export'), ['queryParams' => $queryParams]);
 
         return $response;
     }
@@ -408,9 +372,9 @@ class Tickets extends ResourceAbstract
     /**
      * @param array $params
      *
-     * @throws MissingParametersException
-     * @throws ResponseException
      * @return Tickets
+     * @throws ResponseException
+     * @throws MissingParametersException
      */
     public function attach(array $params = [])
     {
@@ -418,7 +382,8 @@ class Tickets extends ResourceAbstract
             throw new MissingParametersException(__METHOD__, ['file']);
         }
 
-        $upload = $this->client->attachments()->upload($params);
+        $upload = $this->client->attachments()
+            ->upload($params);
 
         if ((! is_object($upload->upload)) || (! $upload->upload->token)) {
             throw new ResponseException(__METHOD__);
@@ -431,29 +396,31 @@ class Tickets extends ResourceAbstract
     /**
      * @param array $params
      *
-     * @throws MissingParametersException
-     * @throws ResponseException
      * @return \stdClass | null
+     * @throws ResponseException
+     * @throws MissingParametersException
      */
     public function merge(array $params = [])
     {
         $params = $this->addChainedParametersToParams($params, ['id' => get_class($this)]);
 
-        if (! $this->hasKeys($params, ['id', 'ids'])) {
-            throw new MissingParametersException(__METHOD__, ['id', 'ids']);
+        if (! $this->hasKeys($params, [
+            'id',
+            'ids'
+        ])) {
+            throw new MissingParametersException(__METHOD__, [
+                'id',
+                'ids'
+            ]);
         }
 
         $route = $this->getRoute(__FUNCTION__, ['id' => $params['id']]);
         unset($params['id']);
 
-        $response = Http::send(
-            $this->client,
-            $route,
-            [
+        $response = Http::send($this->client, $route, [
                 'method'     => 'POST',
                 'postFields' => $params,
-            ]
-        );
+            ]);
 
         return $response;
     }

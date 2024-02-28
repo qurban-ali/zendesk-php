@@ -61,7 +61,7 @@ use Qurban\ZendeskAPI\Resources\HelpCenter;
 use Qurban\ZendeskAPI\Resources\Talk;
 use Qurban\ZendeskAPI\Resources\Voice;
 use Qurban\ZendeskAPI\Resources\CustomData;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 use Qurban\ZendeskAPI\Utilities\Auth;
 
 /**
@@ -114,9 +114,9 @@ use Qurban\ZendeskAPI\Utilities\Auth;
  */
 class HttpClient
 {
-    const VERSION = '1.1.1';
+    const VERSION = '1.1.3';
 
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     /**
      * @var array $headers

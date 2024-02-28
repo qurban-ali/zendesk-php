@@ -32,7 +32,7 @@ class Http
      *
      * @return \stdClass | null The response body, parsed from JSON into an object. Also returns null if something went wrong
      * @throws ApiResponseException
-     * @throws AuthException
+     * @throws AuthException|\GuzzleHttp\Exception\GuzzleException
      */
     public static function send(
         HttpClient $client,
@@ -102,8 +102,7 @@ class Http
                 $request->getHeaders(),
                 $request->getBody(),
                 isset($response) ? $response->getStatusCode() : null,
-                isset($response) ? $response->getHeaders() : null,
-                isset($e) ? $e : null
+                isset($response) ? $response->getHeaders() : null, $e ?? null
             );
 
             $request->getBody()->rewind();

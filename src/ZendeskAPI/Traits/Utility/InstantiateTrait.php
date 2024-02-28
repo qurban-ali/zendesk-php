@@ -6,11 +6,11 @@ use Qurban\ZendeskAPI\HttpClient;
 use Qurban\ZendeskAPI\Resources\ResourceAbstract;
 
 /**
- * The Instantiator trait which has the magic methods for instantiating Resources
+ * The Instantiate trait which has the magic methods for instantiating Resources
  * @package Qurban\ZendeskAPI
  *
  */
-trait InstantiatorTrait
+trait InstantiateTrait
 {
     /**
      * Generic method to object getter. Since all objects are protected, this method
@@ -39,8 +39,6 @@ trait InstantiatorTrait
             $chainedParams = array_merge($chainedParams, [get_class($class) => $arguments[0]]);
         }
 
-        $class = $class->setChainedParameters($chainedParams);
-
-        return $class;
+        return $class->setChainedParameters($chainedParams);
     }
 }

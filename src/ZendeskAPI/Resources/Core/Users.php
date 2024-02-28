@@ -13,7 +13,7 @@ use Qurban\ZendeskAPI\Traits\Resource\Defaults;
 use Qurban\ZendeskAPI\Traits\Resource\FindMany;
 use Qurban\ZendeskAPI\Traits\Resource\MultipartUpload;
 use Qurban\ZendeskAPI\Traits\Resource\UpdateMany;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * The Users class exposes user management methods
@@ -29,7 +29,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class Users extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     use Defaults {
         findAll as traitFindAll;
@@ -74,7 +74,7 @@ class Users extends ResourceAbstract
     /**
      * {@inheritdoc}
      */
-    public static function getValidSubResources()
+    public static function getValidSubResources(): array
     {
         return [
             'groupMemberships'          => GroupMemberships::class,

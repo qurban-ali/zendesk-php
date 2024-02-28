@@ -6,7 +6,7 @@ use Qurban\ZendeskAPI\HttpClient;
 use Qurban\ZendeskAPI\Resources\Talk\Stats;
 use Qurban\ZendeskAPI\Resources\Voice\PhoneNumbers;
 use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * This class serves as a container to allow $this->client->talk
@@ -16,7 +16,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
 class Talk
 {
     use ChainedParametersTrait;
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     public $client;
 

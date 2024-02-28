@@ -3,7 +3,7 @@
 namespace Qurban\ZendeskAPI\Resources\Core;
 
 use Qurban\ZendeskAPI\Resources\ResourceAbstract;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * Class DynamicContent
@@ -12,7 +12,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class DynamicContent extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     /**
      * {@inheritdoc}

@@ -11,7 +11,7 @@ use Qurban\ZendeskAPI\Traits\Resource\Delete;
 use Qurban\ZendeskAPI\Traits\Resource\DeleteMany;
 use Qurban\ZendeskAPI\Traits\Resource\Find;
 use Qurban\ZendeskAPI\Traits\Resource\FindAll;
-use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
+use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
  * Class GroupMemberships
@@ -19,7 +19,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiatorTrait;
  */
 class GroupMemberships extends ResourceAbstract
 {
-    use InstantiatorTrait;
+    use InstantiateTrait;
 
     use Create;
     use Delete;
