@@ -6,6 +6,7 @@ use Qurban\ZendeskAPI\HttpClient;
 use Qurban\ZendeskAPI\Resources\CustomData\CustomObjects;
 use Qurban\ZendeskAPI\Resources\CustomData\CustomObjectsRecords;
 use Qurban\ZendeskAPI\Traits\Utility\ChainedParametersTrait;
+use Qurban\ZendeskAPI\Resources\CustomData\CustomObjectFields;
 use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
 
 /**
@@ -13,6 +14,7 @@ use Qurban\ZendeskAPI\Traits\Utility\InstantiateTrait;
  *
  * @method CustomObjects customObjects()
  * @method CustomObjectsRecords customObjectsRecords()
+ * @method CustomObjectFields customObjectFields()
  */
 class CustomData
 {
@@ -38,6 +40,7 @@ class CustomData
         return [
             'customObjects'        => CustomObjects::class,
             'customObjectsRecords' => CustomObjectsRecords::class,
+            'customObjectFields'   => CustomObjectFields::class,
         ];
     }
 }
