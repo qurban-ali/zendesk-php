@@ -44,7 +44,7 @@ class CustomObjectFields extends ResourceAbstract
         return $this->client->get($route, $params);
     }
 
-    public function find(string $name, $id)
+    public function find(string $name, $id, $params)
     {
         $route = $name . '/fields/' . $id;
 
