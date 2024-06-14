@@ -114,6 +114,7 @@ use Qurban\ZendeskAPI\Utilities\Auth;
  */
 class HttpClient
 {
+
     const VERSION = '1.1.3';
 
     use InstantiateTrait;
@@ -205,36 +206,32 @@ class HttpClient
     public $talk;
 
     /**
-     * @param string $subdomain
-     * @param string $username
-     * @param string $scheme
-     * @param string $hostname
-     * @param int $port
+     * @param string             $subdomain
+     * @param string             $username
+     * @param string             $scheme
+     * @param string             $hostname
+     * @param int                $port
      * @param \GuzzleHttp\Client $guzzle
      */
 
-    public function __construct(
-        $subdomain,
-        $username = '',
-        $scheme = "https",
-        $hostname = "zendesk.com",
-        $port = 443,
-        $guzzle = null
-    ) {
+    public function __construct($subdomain, $username = '', $scheme = "https", $hostname = "zendesk.com", $port = 443, $guzzle = null)
+    {
         if (is_null($guzzle)) {
             $handler = HandlerStack::create();
-            $handler->push(new RetryHandler(['retry_if' => function ($retries, $request, $response, $e) {
-                return $e instanceof RequestException && strpos($e->getMessage(), 'ssl') !== false;
-            }]), 'retry_handler');
+            $handler->push(new RetryHandler([
+                'retry_if' => function ($retries, $request, $response, $e) {
+                    return $e instanceof RequestException && strpos($e->getMessage(), 'ssl') !== false;
+                }
+            ]), 'retry_handler');
             $this->guzzle = new \GuzzleHttp\Client(compact('handler'));
         } else {
             $this->guzzle = $guzzle;
         }
 
         $this->subdomain = $subdomain;
-        $this->hostname  = $hostname;
-        $this->scheme    = $scheme;
-        $this->port      = $port;
+        $this->hostname = $hostname;
+        $this->scheme = $scheme;
+        $this->port = $port;
 
         if (empty($subdomain)) {
             $this->apiUrl = "$scheme://$hostname:$port/";
@@ -242,13 +239,13 @@ class HttpClient
             $this->apiUrl = "$scheme://$subdomain.$hostname:$port/";
         }
 
-        $this->debug      = new Debug();
+        $this->debug = new Debug();
         $this->helpCenter = new HelpCenter($this);
-        $this->voice      = new Voice($this);
+        $this->voice = new Voice($this);
         $this->customData = new CustomData($this);
         $this->embeddable = new Embeddable($this);
-        $this->chat       = new Chat($this);
-        $this->talk       = new Talk($this);
+        $this->chat = new Chat($this);
+        $this->talk = new Talk($this);
     }
 
     /**
@@ -336,8 +333,9 @@ class HttpClient
     }
 
     /**
-     * @param string $key The name of the header to set
+     * @param string $key   The name of the header to set
      * @param string $value The value to set in the header
+     *
      * @return HttpClient
      * @internal param array $headers
      *
@@ -408,18 +406,13 @@ class HttpClient
      * @param string $lastResponseHeaders
      * @param mixed  $lastResponseError
      */
-    public function setDebug(
-        $lastRequestHeaders,
-        $lastRequestBody,
-        $lastResponseCode,
-        $lastResponseHeaders,
-        $lastResponseError
-    ) {
-        $this->debug->lastRequestHeaders  = $lastRequestHeaders;
-        $this->debug->lastRequestBody     = $lastRequestBody;
-        $this->debug->lastResponseCode    = $lastResponseCode;
+    public function setDebug($lastRequestHeaders, $lastRequestBody, $lastResponseCode, $lastResponseHeaders, $lastResponseError)
+    {
+        $this->debug->lastRequestHeaders = $lastRequestHeaders;
+        $this->debug->lastRequestBody = $lastRequestBody;
+        $this->debug->lastResponseCode = $lastResponseCode;
         $this->debug->lastResponseHeaders = $lastResponseHeaders;
-        $this->debug->lastResponseError   = $lastResponseError;
+        $this->debug->lastResponseError = $lastResponseError;
     }
 
     /**
@@ -456,7 +449,10 @@ class HttpClient
     public function getSideload(array $params = [])
     {
         // Allow both for backward compatibility
-        $sideloadKeys = array('include', 'sideload');
+        $sideloadKeys = [
+            'include',
+            'sideload'
+        ];
 
         if (! empty($sideloads = array_intersect_key($params, array_flip($sideloadKeys)))) {
             // Merge to a single array
@@ -485,11 +481,7 @@ class HttpClient
             unset($queryParams['sideload']);
         }
 
-        $response = Http::send(
-            $this,
-            $endpoint,
-            ['queryParams' => $queryParams]
-        );
+        $response = Http::send($this, $endpoint, ['queryParams' => $queryParams]);
 
         return $response;
     }
@@ -501,6 +493,7 @@ class HttpClient
      * @param array $postData
      *
      * @param array $options
+     *
      * @return null|\stdClass
      * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
@@ -509,14 +502,10 @@ class HttpClient
     {
         $extraOptions = array_merge($options, [
             'postFields' => $postData,
-            'method' => 'POST'
+            'method'     => 'POST'
         ]);
 
-        $response = Http::send(
-            $this,
-            $endpoint,
-            $extraOptions
-        );
+        $response = Http::send($this, $endpoint, $extraOptions);
 
         return $response;
     }
@@ -533,11 +522,10 @@ class HttpClient
      */
     public function put($endpoint, $putData = [])
     {
-        $response = Http::send(
-            $this,
-            $endpoint,
-            ['postFields' => $putData, 'method' => 'PUT']
-        );
+        $response = Http::send($this, $endpoint, [
+                'postFields' => $putData,
+                'method'     => 'PUT'
+            ]);
 
         return $response;
     }
@@ -550,15 +538,10 @@ class HttpClient
      * @return null
      * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function delete($endpoint)
     {
-        $response = Http::send(
-            $this,
-            $endpoint,
-            ['method' => 'DELETE']
-        );
-
-        return $response;
+        return Http::send($this, $endpoint, ['method' => 'DELETE']);
     }
 }
