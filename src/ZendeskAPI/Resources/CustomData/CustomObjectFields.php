@@ -30,8 +30,8 @@ class CustomObjectFields extends ResourceAbstract
     /**
      * Find all records for a custom object field
      *
-     * @param string $name
-     * @param array  $params
+     * @param string|int $name
+     * @param array      $params
      *
      * @return stdClass|null
      * @throws ApiResponseException
@@ -44,7 +44,7 @@ class CustomObjectFields extends ResourceAbstract
         return $this->client->get($route, $params);
     }
 
-    public function find(string $name, sting|int $id, array $params = []): ?stdClass
+    public function find(string $name, string|int $id, array $params = []): ?stdClass
     {
         $route = $name . '/fields/' . $id;
 
@@ -71,17 +71,35 @@ class CustomObjectFields extends ResourceAbstract
     /**
      * update a record for a custom object fields
      *
-     * @param string $name
-     * @param array  $params
+     * @param string    $name
+     * @param string|int $id
+     * @param array     $params
      *
      * @return stdClass|null
-     * @throws ApiResponseException
-     * @throws AuthException
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException
      */
-    public function update(string $name, sting|int $id, array $params = []): ?stdClass
+    public function update(string $name, string|int $id, array $params = []): ?stdClass
     {
         $route = $name . '/fields/' . $id;
 
         return $this->client->put($route, ['custom_object_field' => $params]);
+    }
+
+    /**
+     * delete a record for a custom object fields
+     *
+     * @param string    $name
+     * @param string|int $id
+     *
+     * @return stdClass|null
+     * @throws \Qurban\ZendeskAPI\Exceptions\ApiResponseException
+     * @throws \Qurban\ZendeskAPI\Exceptions\AuthException|\GuzzleHttp\Exception\GuzzleException
+     */
+    public function delete(string $name, string|int $id): ?stdClass
+    {
+        $route = $name . '/fields/' . $id;
+
+        return $this->client->delete($route);
     }
 }
