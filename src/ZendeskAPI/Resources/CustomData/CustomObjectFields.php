@@ -44,7 +44,7 @@ class CustomObjectFields extends ResourceAbstract
         return $this->client->get($route, $params);
     }
 
-    public function find(string $name, $id)
+    public function find(string $name, sting|int $id, array $params = []): ?stdClass
     {
         $route = $name . '/fields/' . $id;
 
@@ -78,7 +78,7 @@ class CustomObjectFields extends ResourceAbstract
      * @throws ApiResponseException
      * @throws AuthException
      */
-    public function update(string $name, $id, array $params = []): ?stdClass
+    public function update(string $name, sting|int $id, array $params = []): ?stdClass
     {
         $route = $name . '/fields/' . $id;
 
