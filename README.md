@@ -1,10 +1,28 @@
+# Zendesk PHP API Client
+
+A Composer-installable PHP client for Zendesk API v2. Use it to integrate support tickets, users, attachments and paginated API data into PHP or Laravel applications without writing raw HTTP requests.
+
+[![Packagist](https://img.shields.io/packagist/v/qurbanali/zendesk-php)](https://packagist.org/packages/qurbanali/zendesk-php) [![GitHub stars](https://img.shields.io/github/stars/qurban-ali/zendesk-php)](https://github.com/qurban-ali/zendesk-php/stargazers) [![License](https://img.shields.io/packagist/l/qurbanali/zendesk-php)](https://packagist.org/packages/qurbanali/zendesk-php)
+
+## Features
+
+- Read, create, update and delete tickets, subject to Zendesk permissions.
+- Retrieve users and related resources; upload ticket attachments.
+- Iterate across paginated responses using the built-in pagination strategies.
+- Authenticate with an email and API token or an OAuth token.
+- Guzzle-based HTTP client with configurable retry middleware.
+
+**Quick start:** [Installation](#installation) · [Configuration](#configuration) · [Usage](#usage) · [Pagination](#pagination)
+
 ## API version support
 
-This client **only** supports Zendesk's API v2.  Please see our [API documentation](http://developer.zendesk.com) for more information.
+This client **only** supports Zendesk's API v2.  See the [Zendesk API documentation](https://developer.zendesk.com/api-reference/) for more information.
 
 ## Requirements
 
-* PHP 7.4+
+- PHP 7.4.0 or PHP 8.x, as declared in `composer.json` (compatibility with every PHP 8 release is not verified).
+- Composer
+- A Zendesk account with API access and appropriate permissions. Prefer a supported PHP version for new projects.
 
 ## Installation
 
@@ -12,12 +30,14 @@ The Zendesk PHP API client can be installed using [Composer](https://packagist.o
 
 ### Composer
 
-To install run `composer require qurbanali/zendesk-php`
+```bash
+composer require qurbanali/zendesk-php
+```
 
 ## Configuration
 
 Configuration is done through an instance of `Qurban\ZendeskAPI\HttpClient`.
-The block is mandatory and if not passed, an error will be thrown.
+Configure authentication before sending any requests. The subdomain is the part before `.zendesk.com` in your Zendesk account URL.
 
 ``` php
 // load Composer
@@ -38,6 +58,8 @@ $client->setAuth('basic', ['username' => $username, 'token' => $token]);
 
 Never commit real API tokens. If a real token has previously been committed, revoke or rotate it; removing it from the README does not remove it from Git history.
 
+For OAuth authentication, use `$client->setAuth('oauth', ['token' => $oauthToken]);` with an OAuth access token from a secure environment or secret store.
+
 ## Usage
 
 ### Basic Operations
@@ -45,7 +67,9 @@ Never commit real API tokens. If a real token has previously been committed, rev
 ``` php
 // Get all tickets
 $tickets = $client->tickets()->findAll();
-echo $tickets;
+foreach ($tickets->tickets ?? [] as $ticket) {
+    echo $ticket->id . PHP_EOL;
+}
 
 // Get all tickets regarding a specific user.
 $tickets = $client->users($requesterId)->tickets()->requested();
@@ -60,7 +84,7 @@ $newTicket = $client->tickets()->create([
     ],
     'priority' => 'normal'
 ]);
-echo $newTicket;
+echo $newTicket->ticket->id . PHP_EOL;
 
 // Update a ticket
 $client->tickets()->update(123,[
@@ -72,7 +96,9 @@ $client->tickets()->delete(123);
 
 // Get all users
 $users = $client->users()->findAll();
-echo $users;
+foreach ($users->users ?? [] as $user) {
+    echo $user->id . PHP_EOL;
+}
 ```
 
 ### Attachments
@@ -156,12 +182,15 @@ The latest response is exposed in the iterator at `$iterator->latestResponse()`.
 If you want to use the iterator for custom methods, as opposed to the default `findAll()`, you can create an iterator for your collection:
 
 ```php
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\CbpStrategy;
+use Qurban\ZendeskAPI\Traits\Utility\Pagination\PaginationIterator;
+
 $strategy = new CbpStrategy( // Or ObpStrategy or SinglePageStrategy
-    "resources_key", // The root key with resources in the response, usually plural and in underscore
+    "tickets", // The root key with resources in the response
     [], // Extra params for your call
 );
-$iterator = PaginationIterator($client->tickets(), $strategy);
-foreach ($ticketsIterator as $ticket) {
+$iterator = new PaginationIterator($client->tickets(), $strategy, 'findAll');
+foreach ($iterator as $ticket) {
     // Use as normal
 }
 ```
@@ -185,20 +214,22 @@ $iterator = new PaginationIterator(
 );
 ```
 
-See how the [Pagination Trait](src/Zendesk/API/Traits/Resource/Pagination.php) is used if you need more custom implementations.
+See how the [Pagination Trait](src/ZendeskAPI/Traits/Resource/Pagination.php) is used if you need more custom implementations.
 
 ##### Catching API errors
 
 This doesn't change too much:
 
 ```php
+use Qurban\ZendeskAPI\Exceptions\ApiResponseException;
+
 try {
     foreach ($iterator as $ticket) {
         // your code
     }
 } catch (ApiResponseException $e) {
     $errorMessage = $e->getMessage();
-    $errorDetails = $e=>getErrorDetails();
+    $errorDetails = $e->getErrorDetails();
 }
 ```
 
@@ -262,8 +293,7 @@ Options are passed on `RetryHandler` as an array of values.
 
 ## Contributing
 
-Pull Requests are always welcome but before you send one please read our [contribution guidelines](#CONTRIBUTING.md). It would
-speed up the process and would make sure that everybody follows the community's standard.
+Bug reports and pull requests are welcome. When reporting a problem, include your PHP version, package version, the affected API endpoint and a minimal reproduction with credentials and customer data removed. If the package is useful to you, consider starring the repository.
 
 #### HTTP client print API calls
 
@@ -273,3 +303,5 @@ You can print a line with details about every API call with:
 $client = new ZendeskAPI($subdomain);
 $client->log_api_calls = true;
 ```
+
+Enable debugging only in a controlled environment. Redact tokens and customer data before sharing logs.
