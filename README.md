@@ -27,11 +27,16 @@ use Qurban\ZendeskAPI\HttpClient as ZendeskAPI;
 
 $subdomain = "subdomain";
 $username  = "email@example.com"; // replace this with your registered email
-$token     = "6wiIBWbGkBMo1mRDMuVwkw1EPsNkeUj95PIz2akv"; // replace this with your token
+$token = getenv('ZENDESK_API_TOKEN'); // Set this in your local environment
+if (!$token) {
+    throw new RuntimeException('ZENDESK_API_TOKEN is not set');
+}
 
 $client = new ZendeskAPI($subdomain);
 $client->setAuth('basic', ['username' => $username, 'token' => $token]);
 ```
+
+Never commit real API tokens. If a real token has previously been committed, revoke or rotate it; removing it from the README does not remove it from Git history.
 
 ## Usage
 
@@ -95,7 +100,7 @@ $ticket = $client->tickets()->create([
 
 ### Side-loading
 
-Side-loading allows you to retrieve related records as part of a single request. See [the documentation] for more information. (https://developer.zendesk.com/rest_api/docs/core/side_loading).
+Side-loading allows you to retrieve related records as part of a single request. See [the documentation](https://developer.zendesk.com/rest_api/docs/core/side_loading) for more information.
 
 An example of sideloading with the client is shown below.
 
